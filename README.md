@@ -15,5 +15,5 @@ Like so: ```*/2 * * * * /export/apps/python/2.7/bin/python  /home/tgangte/Develo
 
 After running the script for about 24 hours, the data pattern starts to emerge. The kibana line chart below shows the peak traffic times.
 
-![Alt text](/screenshots/screen1.jpg?raw=true "Commute time graph on kibana")
+![Alt text](/screenshots/screen1.png?raw=true "Commute time graph on kibana")
 
