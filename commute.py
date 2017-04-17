@@ -1,5 +1,4 @@
 from datetime import datetime
-import urllib
 import requests
 
 from elasticsearch import Elasticsearch
@@ -30,14 +29,17 @@ es_time = now.strftime('%Y-%m-%d %H:%M:%S')
 # elasticsearch connection
 es = Elasticsearch(es_hosts)
 
-base_url = 'https://maps.googleapis.com/maps/api/directions/json?' + urllib.urlencode({'traffic_mode': 'best_guess', 'key': api_key, 'departure_time': epoch})
+base_url = 'https://maps.googleapis.com/maps/api/directions/json'
 
 for origin, destination in [(home, work), (work, home)]:
-    url = base_url + '&' + urllib.urlencode({
+    params = {
         "origin": origin,
         "destination": destination,
-    })
-    data = requests.get(url).json()['routes'][0]['legs'][0]
+        "traffic_mode": 'best_guess',
+        "departure_time": epoch,
+        "key": api_key,
+    }
+    data = requests.get(base_url, params=params).json()['routes'][0]['legs'][0]
 
     distance, duration, duration_in_traffic = data['distance'], data['duration'], data['duration_in_traffic']
     doc = {
