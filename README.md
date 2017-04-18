@@ -14,7 +14,7 @@ Example:
 My office to home is about 6km and takes between 15 to 30 minutes on average, depending on traffic. I have setup the script to run every 2 minutes on cron.
 Like so:
 
- ```*/2 * * * * /export/apps/python/2.7/bin/python  /home/tgangte/Development/commute_time/commute.py```
+ ```*/2 * * * * /usr/bin/python  /home/tgangte/Development/commute_time/commute.py```
 
 After running the script for about 24 hours, the data pattern starts to emerge. The kibana line chart below shows the peak traffic times.
 
