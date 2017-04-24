@@ -13,7 +13,7 @@ mappings = {
             'end_address': { 'type': 'string', 'store': True },
 
             'distance_meters': { 'type': 'long', 'store': True },
-            'distance_meters': { 'type': 'string', 'store': True },
+            'distance_text': { 'type': 'string', 'store': True },
 
             'duration_seconds': { 'type': 'long', 'store': True },
             'duration_text': { 'type': 'string', 'store': True },
