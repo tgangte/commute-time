@@ -12,14 +12,9 @@ mappings = {
             'start_address': { 'type': 'string', 'store': True },
             'end_address': { 'type': 'string', 'store': True },
 
-            'distance_meters': { 'type': 'long', 'store': True },
-            'distance_text': { 'type': 'string', 'store': True },
-
-            'duration_seconds': { 'type': 'long', 'store': True },
-            'duration_text': { 'type': 'string', 'store': True },
-
-            'duration_in_traffic_seconds': { 'type': 'long', 'store': True },
-            'duration_in_traffic': { 'type': 'string', 'store': True },
+            'distance': { 'type': 'long', 'store': True },
+            'duration': { 'type': 'long', 'store': True },
+            'duration_in_traffic': { 'type': 'long', 'store': True },
         }
     }
 }
