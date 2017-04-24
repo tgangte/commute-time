@@ -41,20 +41,14 @@ for origin, destination in [(home, work), (work, home)]:
     }
     data = requests.get(base_url, params=params).json()['routes'][0]['legs'][0]
 
-    distance, duration, duration_in_traffic = data['distance'], data['duration'], data['duration_in_traffic']
     doc = {
         "timestamp": es_time,
         "start_address": data['start_address'],
         "end_address": data['end_address'],
 
-        "distance_meters": distance['value'],
-        "distance_text": distance['text'],
-
-        "duration_seconds": duration['value'],
-        "duration_text": duration['text'],
-
-        "duration_in_traffic_seconds": duration_in_traffic['value'],
-        "duration_in_traffic": duration_in_traffic['text'],
+        "distance": data['distance']['value'],
+        "duration": data['duration']['value'],
+        "duration_in_traffic": data['duration_in_traffic']['value'],
     }
 
     res = es.index(index=index, doc_type=doctype, body=doc)  # insert to elasticsearch
